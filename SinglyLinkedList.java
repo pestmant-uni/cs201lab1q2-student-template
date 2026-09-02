@@ -108,25 +108,40 @@ public class SinglyLinkedList<E> {
         }
     }
 
-    public void reverse(){       
-        if (head != null || size == 0) {
-            Node<E> prev = null;
-            Node<E> curr = head;
-            Node<E> next = head.getNext();
+    // public void reverse(){       
+    //     if (head != null || size == 0) {
+    //         Node<E> prev = null;
+    //         Node<E> curr = head;
+    //         Node<E> next = head.getNext();
             
-            head = tail;
-            tail = curr;
-            tail.setNext(null);
+    //         head = tail;
+    //         tail = curr;
+    //         tail.setNext(null);
 
-            while (curr != null) {
-                next = curr.getNext();
-                curr.setNext(prev);
-                prev = curr;
-                curr = next;
-            }
+    //         while (curr != null) {
+    //             next = curr.getNext();
+    //             curr.setNext(prev);
+    //             prev = curr;
+    //             curr = next;
+    //         }
+    //     }
+    // }
+
+    public void reverse() {
+        if (isEmpty() || size == 1) return;
+        Node prev = head;
+        Node curr = head.getNext();
+        Node next = curr.getNext();
+        head = tail;
+        tail = prev;
+        tail.setNext(null);
+        while (next != null) {
+            curr.setNext(prev);
+            prev = curr;
+            curr = next;
+            next = next.getNext();
         }
+        curr.setNext(prev);
     }
-
-    
 }
     
