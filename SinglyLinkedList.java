@@ -88,7 +88,7 @@ public class SinglyLinkedList<E> {
         if (head == null) {
             return null;
 
-        } else if (head.getNext() == null) {
+        } else if (head == tail) {
             E removed = head.getElement();
             head = null;
             tail = null;
