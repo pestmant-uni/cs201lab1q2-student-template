@@ -102,13 +102,9 @@ public class SinglyLinkedList<E> {
                 curr = curr.getNext();
             }
 
-            E removed = curr.getElement();
+            E removed = curr.getNext().getElement();
             tail = curr;
             size--;
-
-            if (isEmpty()) {
-                return null;
-            }
             return removed;
         }
     }
