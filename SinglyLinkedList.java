@@ -105,6 +105,10 @@ public class SinglyLinkedList<E> {
             E removed = curr.getElement();
             tail = curr;
             size--;
+
+            if (isEmpty()) {
+                return null;
+            }
             return removed;
         }
     }
