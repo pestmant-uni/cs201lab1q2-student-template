@@ -116,6 +116,7 @@ public class SinglyLinkedList<E> {
             
             head = tail;
             tail = curr;
+            tail.setNext(null);
 
             while (curr != null) {
                 next = curr.getNext();
@@ -125,5 +126,7 @@ public class SinglyLinkedList<E> {
             }
         }
     }
+
+    
 }
     
